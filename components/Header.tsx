@@ -36,6 +36,7 @@ function Header({}: Props) {
         bgColor='transparent'/>
       </motion.div>
 
+      {/* fix the bug to transform into a link */}
       <motion.div 
       initial={{
         x: 1000,

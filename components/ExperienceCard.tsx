@@ -5,7 +5,7 @@ type Props = {}
 
 function ExperienceCard({}: Props) {
   return (
-    // adjust css
+    // adjust css shrink limit not zero, size cards, etc
     <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden'>
       <motion.img
         initial={{
@@ -46,13 +46,13 @@ function ExperienceCard({}: Props) {
             src="assets/matlab-logo.jpeg"
             alt="Matlab logo"
           />
-          {/* tech used */}
         </div>
         <p className='uppercase py-5 text-gray-300'>
           started...
           {/* dates */}
         </p>
-        <ul className='list-disc space-y-4 ml-5 text-lg h-[150[px] md:h-[250px] overflow-auto'>
+        {/* adjust limits and size */}
+        <ul className='list-disc space-y-4 ml-5 text-lg h-[150[px] md:h-[250px] overflow-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ac0a]/80'>
           <li>Sumary points Sumary points Sumary points Sumary points</li>
           <li>Sumary points Sumary points Sumary points Sumary points</li>
           <li>Sumary points Sumary points Sumary points Sumary points</li>
