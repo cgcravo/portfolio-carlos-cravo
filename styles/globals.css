@@ -10,4 +10,8 @@
   .aboutParagraph {
     @apply text-base 
   }
+
+  .contactInput {
+    @apply outline-none focus:border-[#f7ab0a]/40 focus:text-[#f7ab0a]/40 bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all
+  }
 }

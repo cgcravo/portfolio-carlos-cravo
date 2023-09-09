@@ -38,7 +38,7 @@ function About({}: Props) {
       alt="Carlos photo at a restaurant in Brazil"
       className='mt-[8rem] md:mt-0 flex-shrink-0 w-56 h-56 rounded-full object-cover object-center md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]' />
       <div
-      className='space-y-3 px-0 md:px-10 max-h-[45%] md:max-h-[70%] overflow-auto'>
+      className='space-y-3 px-0 md:px-10 max-h-[45%] md:max-h-[70%] overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ac0a]/80 '>
         <h4
         className='font font-semibold text-center'>
           Here is a <span className='underline decoration-[#f7ac0a25]'>little</span> about myself
