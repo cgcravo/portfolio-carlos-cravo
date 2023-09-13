@@ -1,12 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Experience } from '@/utilities/experiences';
 
-type Props = {}
+type Props = {
+  experience: Experience;
+}
 
-function ExperienceCard({}: Props) {
+function ExperienceCard({ experience }: Props) {
   return (
     // adjust css shrink limit not zero, size cards, etc
-    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden'>
+    <article className='flex flex-col flex-initial rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] min-h-[700px] max-h-[900px] snap-center bg-[#292929] p-10 opacity-40 hover:opacity-100 transition-opacity duration-200 overflow-hidden cursor-pointer'>
+        
       <motion.img
         initial={{
           y: -100,
@@ -23,45 +27,37 @@ function ExperienceCard({}: Props) {
           once: true,
         }}
         className='w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center'
-        src="/assets/aim solder.jpeg"
-        alt="AIM logo"
+        src={experience.image}
+        alt={`${experience.company} logo`}
       />
 
-      <div className='px-0 md:px-10'>
-        <h4 className='text-4xl font-light'>JOB TITLE</h4>
-        <p className='font-bold text-2xl mt-1'>COMPANY</p>
-        <div className='flex space-x-2 my-2' >
-          <img 
-            className='h-10 w-10 rounded-full'
-            src="assets/matlab-logo.jpeg"
-            alt="Matlab logo"
-          />
-          <img 
-            className='h-10 w-10 rounded-full'
-            src="assets/matlab-logo.jpeg"
-            alt="Matlab logo"
-          />
-          <img 
-            className='h-10 w-10 rounded-full'
-            src="assets/matlab-logo.jpeg"
-            alt="Matlab logo"
-          />
+      <div className='px-0 md:px-10 flex-grow flex flex-col justify-between'>
+        <h4 className='text-4xl font-light uppercase text-center p-10'>{experience.title}</h4>
+        <div className='h-[300px]'>
+          <p className='font-bold text-2xl mt-10 ml-8'>{experience.company}</p>
+          <div className='flex space-x-2' >
+            {experience.tech?.map((tech, index)=>{
+              return <img key={index}
+              className='h-10 w-10 rounded-full'
+              src={tech}
+              alt="tech logo"
+            />
+              })}
+          </div>
+          <p className='uppercase text-xl ml-8 mb-2 text-gray-300'>
+            {`${experience.dateStart} - ${experience.dateEnd}`}
+          </p>
+          <div className='overflow-y-auto max-h-36 overflow-x-hidden scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ac0a]/80'>
+          <ul className='list-disc space-y-4 ml-12 pr-5 text-lg' >
+            {experience.points.map((point, index)=>{
+              return <li key={index}>{point}</li>
+            })}
+          </ul>
+          </div>
         </div>
-        <p className='uppercase py-5 text-gray-300'>
-          started...
-          {/* dates */}
-        </p>
-        {/* adjust limits and size */}
-        <ul className='list-disc space-y-4 ml-5 text-lg h-[150[px] md:h-[250px] overflow-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ac0a]/80'>
-          <li>Sumary points Sumary points Sumary points Sumary points</li>
-          <li>Sumary points Sumary points Sumary points Sumary points</li>
-          <li>Sumary points Sumary points Sumary points Sumary points</li>
-          <li>Sumary points Sumary points Sumary points Sumary points</li>
-          <li>Sumary points Sumary points Sumary points Sumary points</li>
-        </ul>
       </div>
     </article>
-  )
+    )
 }
 
 export default ExperienceCard;

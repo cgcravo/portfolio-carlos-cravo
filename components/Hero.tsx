@@ -1,13 +1,15 @@
-import React from 'react'
-import { Cursor, useTypewriter } from 'react-simple-typewriter'
-import BackgroundCircles from './BackgroundCircles'
-import Link from 'next/link'
+import React from 'react';
+import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import BackgroundCircles from './BackgroundCircles';
+import Link from 'next/link';
+import { typewrite } from '@/utilities/typewrite';
+import { heroButtons } from '@/utilities/heroButtons';
 
 type Props = {}
 
 function Hero({}: Props) {
     const [text, count] = useTypewriter({
-      words: ["Hi, I'm Carlos!","<WebDeveloper />", ":root{Brazil: 100%} body{Canada:90%}","Engineer.tsx",  "import { useCoffee } from 'Brazil'", "const LOVE = [Wife, Animals, Music]"],
+      words: [...typewrite],
       loop: true,
       delaySpeed: 2000,
     })
@@ -25,18 +27,11 @@ function Hero({}: Props) {
           <Cursor cursorColor='hsl(40.76deg 93.68% 50.39%)' />
         </h1>
         <div className='pt-5'>
-          <Link href="#about">
-          <button className='heroButton'>About</button>
-          </Link>
-          <Link href="#skills">
-          <button className='heroButton'>Skills</button>
-          </Link>
-          <Link href="#projects">
-          <button className='heroButton'>Projects</button>
-          </Link>
-          <Link href="#experience">
-          <button className='heroButton'>Experience</button>
-          </Link>
+          {heroButtons.map((button)=>{
+            return (<Link key={button.id} href={button.id}>
+            <button className='heroButton'>{button.name}</button>
+            </Link>)
+          })}
         </div>
         </div>
       

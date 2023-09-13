@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { projects } from '@/utilities/projects';
 
 type Props = {}
 
 function Projects({}: Props) {
-  const projects = [1,2,3,4,5] 
   return (
     <motion.div
       initial={{
@@ -22,8 +22,7 @@ function Projects({}: Props) {
       </h3>
       <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ac0a]/80 z-20'>
         {projects.map((project, index)=>{
-          // the h-screen on my browser is hiding the component scroll bar behind the viewport scroll bar
-          return (<div key={index} className='w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-5 justify-center items-center p-20 md:p-44'>
+          return (<div key={index} className='w-screen min-w-[300px] h-screen flex-shrink-0 snap-center flex flex-col space-y-5 justify-center items-center p-20 md:p-44'>
             <motion.img
             initial={{
               y: -300,
@@ -39,14 +38,21 @@ function Projects({}: Props) {
             viewport={{
               once: true,
             }}
-            src="/assets/Screenshot 2023-07-18 115249.jpg" 
-            alt="Find My Bloco project screenshot"
-            className='max-h-[60%]'/>
-            <div className='space-y-10 px-0 md:px-10 max-w-2xl'>
-              <h4 className='text-4xl font-semibold text-center underline decoration-[#f7ac0a]/50'>Find My Bloco</h4>
-              <p className='text-lg text-center md:text-justify'>Project Summary Project Summary Project Summary Project Summary Project Summary Project Summary Project Summary Project SummaryProject Summary</p>
-            </div>
+            src={project.src} 
+            alt={`${project.title} project logo/homepage`}
+            className='max-h-[30%] md:max-h-[40%] xl:max-h-[50%] rounded-lg'/>
+            <div className='space-y-10 px-0 md:px-10 max-w-2xl flex flex-col items-center'>
+              <h4 className='text-4xl font-semibold text-center underline decoration-[#f7ac0a]/50'>{project.title}</h4>
+              
+              <div className='flex items-center justify-center space-x-2 flex-wrap'>
+                {project.skills.map((skill, index)=>{
+                  return <img key={index} src={skill} className='h-8 w-8 rounded-full object-cover object-center'/>
+                })}
+              </div>
 
+                <p className='text-lg text-center max-h-[150px] md:text-justify overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ac0a]/80'>{project.summary}</p>
+                {project.complete ? <button className='bg-[#f7ab0a] py-5 px-5 rounded-lg text-black font-bold text-2xl max-w-[300px] leading-none'><span className='sr-only'>{`${project.title} project page`}</span>Check this out!</button> : <p className='py-5 px-10 text-gray-500 text-2xl font-bold text-center'>Working on it...</p> }
+            </div>
             </div>)
         })}
       </div>

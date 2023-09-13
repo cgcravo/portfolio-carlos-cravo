@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Skill from './Skill'
+import { skills } from '@/utilities/skills'
 
 type Props = {}
 
@@ -24,19 +25,12 @@ function Skills({}: Props) {
         Some stuff I use for coding
       </h3>
       <div className='grid grid-cols-4 gap-5'>
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        {skills.slice(0,skills.length / 2).map((skill)=>{
+          return <Skill key={skill.name} name={skill.name} src={skill.src}/>
+        })}
+        {skills.slice(skills.length / 2, skills.length).map((skill)=>{
+          return <Skill key={skill.name} directionLeft name={skill.name} src={skill.src}/>
+        })}
 
       </div>
     </motion.div>
