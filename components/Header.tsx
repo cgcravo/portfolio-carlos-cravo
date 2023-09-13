@@ -3,6 +3,8 @@ import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import { socials } from '@/utilities/socials';
 import Link from 'next/link';
+import { HiOutlineMail } from "react-icons/hi"
+import { IconContext } from 'react-icons';
 
 type Props = {}
 
@@ -50,12 +52,14 @@ function Header({}: Props) {
           duration: 2,
         }}
         className='flex flex-row items-center text-gray-300 cursor-pointer'>
-          <SocialIcon 
-          network='email'
-          fgColor='gray'
-          bgColor='transparent'
-          />
-          <p className='uppercase hidden md:inline-flex text-sml text-gray-400' >
+          <IconContext.Provider
+            value={{ color: 'gray', size: '30px' }}
+          >
+            <div>
+              <HiOutlineMail />
+            </div>
+          </IconContext.Provider>
+          <p className='uppercase hidden md:inline-flex text-sml text-gray-400 ml-2' >
           get in touch
           </p>
         </motion.div>
