@@ -28,7 +28,7 @@ function Contact({}: Props) {
 
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center flex flex-col underline decoration-[#f7ac0a]/50">
-          I'm super nice to talk to!
+          I&#39;m super nice to talk to!
         </h4>
         <div className="space-y-5">
           <div className="flex items-center space-x-5 justify-center">
