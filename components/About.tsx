@@ -50,12 +50,12 @@ function About({}: Props) {
           and building unusual stuff with code!
         </p>
         <p className="aboutParagraph">
-          I&#39;ve been coding since Univeristy. Programming logic with Python was
+          I&#39;ve been coding since University. Programming logic with Python was
           the first subject I <em>genuinely</em> liked. Who would imagine it could be fun doing math on a computer? I
           used to work with engineering developing new projects for the electronic industry. It
           was awesome to use my analytical skills and solve problems! I used to
           like it a lot, but I couldn&#39;t get rid of the feeling that something
-          was missing... Everything was so strict and rigid and my solutions
+          was missing... Everything was so strict and rigid but despite this my solutions
           were somehow always original. Was it what I <em>really</em> wanted?
           Was it really me? I needed <em>something more</em>. I craved to also
           exercise my creativity as well as my logic! I remembered then how much
@@ -64,7 +64,7 @@ function About({}: Props) {
         </p>
         <p className="aboutParagraph">
           Since then, I&#39;ve been constantly honing my skills. I recently
-          graduated from Concordia Full-Stack Web Development Bootcamp program
+          graduated from Concordia&#39;s Full-Stack Web Development Bootcamp program
           and I&#39;m always looking for something new to learn. At the moment, I&#39;m
           diving deep on CSS while improving my understanding of React,
           TypeScript, Tailwind and Styled-Components.
@@ -72,7 +72,7 @@ function About({}: Props) {
         <p className="aboutParagraph">
           I&#39;m currently seeking a stimulating environment where I can develop my
           skills. If you&#39;d like to know a little bit more about me, don&#39;t
-          exitate to send me a message, I&#39;m super nice to talk to! <span>&#128513;</span>
+          hesitate to send me a message, I&#39;m super nice to talk to! <span>&#128513;</span>
         </p>
       </div>
     </motion.div>

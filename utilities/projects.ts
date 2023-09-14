@@ -16,7 +16,7 @@ export const projects: Project[] = [
   { src: "/assets/naometorra-logo.jpeg",
     title: "Nao Me Torra Coffee Shop",
     skills: ["/assets/skills/react-1-logo.png", "/assets/skills/TSlogo.svg", "/assets/skills/tailwind-logo.jpg", "/assets/skills/next-logojpg"],
-    summary: "Não Me Torra is a website built for a very unnique coffee shop built as a newsstand. ",
+    summary: "Não Me Torra is a website built for a very unique coffee shop built as a news-stand. ",
     complete: false,
   },
   { src: "/assets/pacman.png",

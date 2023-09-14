@@ -1,12 +1,13 @@
 import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 type Props = {};
 
 type Inputs = {
-  name: string;
-  surname: string;
+  first_name: string;
+  last_name: string;
   company: string;
   email: string;
   subject: string;
@@ -14,10 +15,19 @@ type Inputs = {
 };
 
 function Contact({}: Props) {
-  const { register, handleSubmit } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:carlosguilhermecravo@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name} ${formData.surname} and I work for ${formData.company}. ${formData.message}`
+  const form: any = useRef()
+
+  const sendEmail = (event: any) => {
+    event.preventDefault();
+
+    emailjs.sendForm('contact_carlos', 'template_a0a218b', form.current, 'y2bPtS_3FvIoOt2t5')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+    event.target.reset
   };
 
   return (
@@ -45,47 +55,55 @@ function Contact({}: Props) {
           </div>
 
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            ref={form}
+            onSubmit={sendEmail}
             className="flex flex-col space-y-2 w-fit mx-auto"
           >
             <div className="flex space-x-2">
               <input
-                {...register("name")}
-                placeholder="Name"
+                name="first_name"
+                placeholder="First Name"
                 className="contactInput"
                 type="text"
+                required
               />
               <input
-                {...register("surname")}
-                placeholder="Surname"
+                name="last_name"
+                placeholder="Last Name"
                 className="contactInput"
                 type="text"
+                required
               />
             </div>
             <input
-              {...register("company")}
+              name="company"
               placeholder="Company"
               className="contactInput"
               type="text"
             />
             <input
-              {...register("email")}
+              name="email"
               placeholder="Email"
               className="contactInput"
               type="email"
+              required
             />
             <input
-              {...register("subject")}
+              name="subject"
               placeholder="Subject"
               className="contactInput"
               type="text"
+              required
             />
             <textarea
-              {...register("message")}
+              name="message"
               placeholder="Message"
               className="contactInput"
+              required
             />
-            <button className="bg-[#f7ab0a] py-5 px-10 rounded-sm text-black font-bold text-2xl">
+            <button 
+            type="submit"
+            className="bg-[#f7ab0a] py-5 px-10 rounded-sm text-black font-bold text-2xl">
               Submit
             </button>
           </form>
