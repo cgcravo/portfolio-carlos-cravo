@@ -6,7 +6,20 @@ import WorkExperience from '@/components/WorkExperience';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
+
+
+// Things to implent:
+// next images fix
+// snackbar for the form
+// fix text and buttons accessibility
+// change project design with CSS variables
+// projects pages
+// darkmode
+// add generative arts and the rotating and gradient square/circle animation
+// change hero animation for the tunel effect
+
 
 export default function Home() {
   return (
@@ -44,15 +57,7 @@ export default function Home() {
     </section>
 
     
-    <footer className='sticky bottom-10 w-full'>
-      <div className='flex items-center justify-start ml-5 cursor-default'>
-      <Link href="#hero">
-        <img
-          className='h-10 w-10 rounded-full filter hover:bg-[#f7ac0a]/50 cursor-pointer bg-grayscale transition-all ease-in-out duration-300'
-          src="/assets/noun-back-to-top-5418720.png" alt="button that takes to the top of the page"/>
-      </Link>
-      </div>
-    </footer>
+    <Footer />
     
     </div>
   )
