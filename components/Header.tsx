@@ -55,7 +55,7 @@ function Header({}: Props) {
           <IconContext.Provider
             value={{ color: 'gray', size: '30px' }}
           >
-            <div>
+            <div className='h-[50px] w-[50px] flex justify-center items-center'>
               <HiOutlineMail />
             </div>
           </IconContext.Provider>

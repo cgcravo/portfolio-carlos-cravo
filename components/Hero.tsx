@@ -18,15 +18,15 @@ function Hero({}: Props) {
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
       <BackgroundCircles />
       <img 
-      className="relative rounded-full h-32 w-32 mx-auto object-cover"
+      className="relative rounded-full h-24 md:h-32 w-24 md:w-32 mx-auto object-cover"
       src="assets/WhatsApp Image 2023-09-07 at 10.36.08 AM.jpeg" alt="profile picture"/>
       <div className='z-20'>
-        <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Full Stack Web Developer</h2>
-        <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
+        <h2 className='text-sm md:text-base lg:text-lg uppercase text-gray-500 pb-2 tracking-[15px]'>Full Stack Web Developer</h2>
+        <h1 className='flex justify-center items-center text-xl md:text-3xl lg:text-6xl font-semibold px-10 min-h-[4rem] lg:min-h-[8rem]'>
           <span className='mr-3'>{text}</span>
           <Cursor cursorColor='hsl(40.76deg 93.68% 50.39%)' />
         </h1>
-        <div className='pt-5'>
+        <div className='flex flex-col mt-5 md:mt-0 md:flex-row md:justify-center'>
           {heroButtons.map((button)=>{
             return (<Link key={button.id} href={button.id}>
             <button className='heroButton'>{button.name}</button>
