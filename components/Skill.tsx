@@ -1,5 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { log } from 'console';
+import { useEffect, useState } from 'react';
+
 
 type Props = {
   directionLeft?: boolean;
@@ -12,7 +15,7 @@ function Skill({ directionLeft, name, src }: Props) {
     <div className='group relative flex cursor-pointer'>
       <motion.img
         initial={{
-          x: directionLeft ? -200 : 200,
+          x: 100*(directionLeft ? -1 : 1),
           opacity: 0,
         }}
         whileInView={{

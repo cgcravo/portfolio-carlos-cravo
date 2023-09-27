@@ -26,7 +26,7 @@ function Projects({}: Props) {
           return (<div key={index} className='w-screen min-w-[300px] h-screen flex-shrink-0 snap-center flex flex-col space-y-5 md:space-y-10 justify-center items-center px-10 pt-20 md:p-44'>
             <motion.img
             initial={{
-              y: -300,
+              y: -100,
               opacity: 0,
             }} 
             whileInView={{
@@ -52,7 +52,6 @@ function Projects({}: Props) {
               </div>
 
                 <p className='text-base md:text-lg text-center max-h-[150px] md:text-justify overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ac0a]/80'>{project.summary}</p>
-                {/* {project.complete ? <button className='bg-[#f7ab0a] py-5 px-5 rounded-lg text-black font-bold text-2xl max-w-[300px] leading-none'><span className='sr-only'>{`${project.title} project page`}</span>Check this out!</button> : <p className='py-5 px-10 text-gray-500 text-2xl font-bold text-center'>Working on it...</p> } */}
             </div>
             </div>)
         })}
