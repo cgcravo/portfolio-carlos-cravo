@@ -4,6 +4,8 @@ import BackgroundCircles from './BackgroundCircles';
 import Link from 'next/link';
 import { typewrite } from '@/utilities/typewrite';
 import { heroButtons } from '@/utilities/heroButtons';
+import Image from 'next/image';
+import HeroPic from "../public/assets/hero_pic.jpeg"
 
 type Props = {}
 
@@ -17,9 +19,10 @@ function Hero({}: Props) {
     // overflow:hidden so the circles wont be squeezed if don't fit in the screen
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
       <BackgroundCircles />
-      <img 
+      <Image
+      priority
       className="relative rounded-full h-24 md:h-32 w-24 md:w-32 mx-auto object-cover"
-      src="assets/WhatsApp Image 2023-09-07 at 10.36.08 AM.jpeg" alt="profile picture"/>
+      src={HeroPic} alt="profile picture"/>
       <div className='z-20'>
         <h2 className='text-sm md:text-base lg:text-lg uppercase text-gray-500 pb-2 tracking-[15px]'>Full Stack Web Developer</h2>
         <h1 className='flex justify-center items-center text-xl md:text-3xl lg:text-6xl font-semibold px-10 min-h-[4rem] lg:min-h-[8rem]'>

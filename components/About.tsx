@@ -1,7 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import AboutPic from "../public/assets/about_pic.webp"
 
 type Props = {};
+
+const MotionImage = motion(Image);
 
 function About({}: Props) {
   return (
@@ -20,9 +24,9 @@ function About({}: Props) {
       <h3 className="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         About
       </h3>
-      <motion.img
+      <MotionImage
         initial={{
-          x: -500,
+          x: -200,
           opacity: 0,
         }}
         transition={{
@@ -35,9 +39,9 @@ function About({}: Props) {
         viewport={{
           once: true,
         }}
-        src="/assets/WhatsApp Image 2023-09-07 at 9.59.23 AM.jpeg"
+        src={AboutPic}
         alt="Carlos photo at a restaurant in Brazil"
-        className="mt-[4rem] md:mt-0 flex-shrink-0 w-32 h-32 rounded-full object-cover object-center md:rounded-lg md:w-[300px] md:h-[300px] xl:w-[500px] xl:h-[500px]"
+        className="relative mt-[4rem] md:mt-0 flex-shrink-0 w-32 h-32 rounded-full object-cover object-center md:rounded-lg md:w-[300px] md:h-[300px] xl:w-[500px] xl:h-[500px]"
       />
       
       <div className="relative mb-3 px-0 md:px-10 max-h-[45%] md:max-h-[65%] overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ac0a]/80 ">
