@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import AboutPic from "../public/assets/me.webp"
+import AboutPic from "../public/assets/about_resized.webp"
 
 type Props = {};
 
@@ -39,6 +39,7 @@ function About({}: Props) {
         viewport={{
           once: true,
         }}
+        priority
         src={AboutPic}
         alt="Carlos photo at a restaurant in Brazil"
         className="relative mt-[4rem] md:mt-0 flex-shrink-0 w-32 h-32 rounded-full object-cover object-center md:rounded-lg md:w-[300px] md:h-[300px] xl:w-[500px] xl:h-[500px]"
