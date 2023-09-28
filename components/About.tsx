@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import AboutPic from "../public/assets/about_pic.webp"
+import AboutPic from "../public/assets/me.webp"
 
 type Props = {};
 
