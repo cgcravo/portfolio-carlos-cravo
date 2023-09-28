@@ -12,12 +12,12 @@ import Image from 'next/image';
 
 
 // Things to implent:
-// next images fix
 // snackbar for the form
-// fix text and buttons accessibility
-// change project design with CSS variables
 // projects pages
 // darkmode
+// next images OPTMIZATION
+// fix text and buttons accessibility
+// change project design with CSS variables
 // add generative arts and the rotating and gradient square/circle animation
 // change hero animation for the tunel effect
 
